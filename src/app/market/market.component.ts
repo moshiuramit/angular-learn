@@ -1,25 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 
+import { CollectableService } from '../shared/collectable.service';
+import { Collectable } from '../shared/collectable.model';
+
 @Component({
   selector: 'app-market',
   templateUrl: './market.component.html',
   styleUrls: ['./market.component.css']
+  // add provider instance here if we want to use it within this component and its child component
 })
 export class MarketComponent implements OnInit {
+  collectables = [];
 
-	collectables = [
-		{description: " A Very Rare copy or 'Jquery of Dummies' ", type: "Book" },
-		{description: " The First Letter ever Written", type: "Piece of Paper" },
-		{description: " A Box with Garbage ", type: "Garbege" },
-		{description: "A Box with all zsuna ", type: "Photo" }
-	];
-  constructor() { }
+  constructor(private collectableService: CollectableService) { }
 
-  onAddtoCollection() {
-  	alert("Hello ! ");
+  onAddtoCollection(item: Collectable) {
+  	this.collectableService.addToCollection(item);
   }
 
   ngOnInit() {
+    this.collectables = this.collectableService.getCollectables();
   }
 
 }

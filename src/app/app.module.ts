@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { MarketComponent } from './market/market.component';
 import { CollectionComponent } from './collection/collection.component';
+import { CollectableService } from './shared/collectable.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { CollectionComponent } from './collection/collection.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [CollectableService], // We are going to use the same instance for whole app 
   bootstrap: [AppComponent]
 })
 export class AppModule { }
