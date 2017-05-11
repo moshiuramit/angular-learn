@@ -7,17 +7,21 @@ import { AppComponent } from './app.component';
 import { MarketComponent } from './market/market.component';
 import { CollectionComponent } from './collection/collection.component';
 import { CollectableService } from './shared/collectable.service';
+import { HeaderComponent } from './header.component';
+import { routing } from './app.routing';
 
 @NgModule({
   declarations: [
     AppComponent,
     MarketComponent,
-    CollectionComponent
+    CollectionComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routing
   ],
   providers: [CollectableService], // We are going to use the same instance for whole app 
   bootstrap: [AppComponent]

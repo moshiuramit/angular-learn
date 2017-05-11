@@ -3,8 +3,8 @@
 	<div class="col-xs-12">
 		<ul class="list-group" *ngIf="collectedItems.length > 0">
 			<li class="list-group-item" *ngFor="let item of collectedItems">
-				<span class="badge">photo</span>
-				<button type="button" class="btn btn-danger" (click)="onRemoveFromCollection(item)"> {{ item.type }}</button>
+				<span class="badge">{{ item.type }}</span>
+				<button type="button" class="btn btn-danger" (click)="onRemoveFromCollection(item)"> Remove From Collection </button>
 				<span> {{ item.description }} </span>
 			</li>
 		</ul>
